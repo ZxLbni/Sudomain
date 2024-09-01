@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    background: rgba(0, 0, 0, 0.8); /* Fallback for no video */
+}
+
+/* Full-screen background video */
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(60%); /* Darkens the video for better readability */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #007bff;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+}
+
+input:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #007bff;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.spinner {
+    display: none;
+    margin: 0 auto 10px;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #007bff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#response {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 12px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 10px;
+    color: #333;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
